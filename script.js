@@ -3,9 +3,17 @@
 function loadNavigation() {
     // Add cache-busting timestamp to ensure fresh navigation
     const timestamp = new Date().getTime();
+    console.log('Loading navigation with timestamp:', timestamp);
+    
     fetch(`nav.html?t=${timestamp}`)
-        .then(response => response.text())
+        .then(response => {
+            console.log('Navigation response status:', response.status);
+            return response.text();
+        })
         .then(html => {
+            console.log('Navigation HTML loaded, length:', html.length);
+            console.log('Navigation content preview:', html.substring(0, 200));
+            
             // Insert navigation at the beginning of the body
             document.body.insertAdjacentHTML('afterbegin', html);
             
