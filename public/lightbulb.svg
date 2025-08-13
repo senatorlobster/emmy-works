@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none">
+  <!-- Color tokens (edit these if you want a different green) -->
+  <style>
+    :root {
+      --stroke: #76C79E; /* muted sage/sea green */
+    }
+    .s { stroke: var(--stroke); }
+  </style>
+
+  <!-- Outer octagonal bulb + neck (tall/narrow, flat join at neck) -->
+  <path class="s" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M60 20 H140 L180 60 V150 L120 210 V230 H80 V210 L20 150 V60 Z"></path>
+
+  <!-- Filament 'Y' (wide arms, short) -->
+  <path class="s" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M70 85 L100 115 L130 85 M100 115 V160"></path>
+
+  <!-- Short neck uprights -->
+  <path class="s" stroke-width="8" stroke-linecap="round" d="M80 230 V236 M120 230 V236"></path>
+
+  <!-- Base ribs (three bars) -->
+  <rect x="60" y="238" width="80" height="14" rx="4" class="s" stroke-width="8"></rect>
+  <rect x="60" y="258" width="80" height="14" rx="4" class="s" stroke-width="8"></rect>
+  <rect x="60" y="278" width="80" height="14" rx="4" class="s" stroke-width="8"></rect>
+
+  <!-- End cap (short foot) -->
+  <rect x="86" y="296" width="28" height="10" rx="5" class="s" stroke-width="8"></rect>
+</svg>

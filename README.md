@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Emmy Works - Portfolio Website
 
-## Getting Started
+A simple, modern portfolio website built with vanilla HTML, CSS, and JavaScript.
 
-First, run the development server:
+## What This Is
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This is a clean, responsive portfolio website that's much simpler than the previous React/Next.js version. It includes:
+
+- **Responsive navigation** with mobile menu
+- **Hero section** with call-to-action buttons
+- **About section** for your story
+- **Writing section** to showcase your work
+- **Contact section** with your information
+- **Dark mode support** (automatically follows system preference)
+- **Smooth scrolling** and animations
+
+## How to Use
+
+### 1. **Edit Content**
+
+- Open `index.html` in any text editor
+- Replace placeholder text with your actual content
+- Update contact information with your real details
+- Add your own images (replace the lightbulb.svg references)
+
+### 2. **Customize Styling**
+
+- Edit `styles.css` to change colors, fonts, or layout
+- The color scheme uses emerald green (#059669) - easy to change
+- All styles are well-organized and commented
+
+### 3. **Add Functionality**
+
+- Modify `script.js` to add new interactive features
+- The mobile menu and smooth scrolling are already implemented
+- Easy to add new animations or effects
+
+### 4. **Deploy**
+
+- Upload all files to any web hosting service
+- No build process needed - just upload and go!
+- Works on GitHub Pages, Netlify, Vercel, or any web host
+
+## File Structure
+
+```
+emmy-works/
+├── index.html          # Main HTML file
+├── styles.css          # All your styling
+├── script.js           # JavaScript functionality
+├── public/             # Your images and assets
+│   ├── lightbulb.svg
+│   └── other-images...
+└── README.md           # This file
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✅ **Responsive Design** - Works on all devices  
+✅ **Dark Mode** - Automatically follows system preference  
+✅ **Mobile Menu** - Hamburger menu for small screens  
+✅ **Smooth Scrolling** - Navigation links scroll smoothly  
+✅ **Modern Animations** - Subtle hover effects and transitions  
+✅ **Accessibility** - Proper ARIA labels and semantic HTML  
+✅ **Fast Loading** - No framework overhead
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization Tips
 
-## Learn More
+### Change Colors
 
-To learn more about Next.js, take a look at the following resources:
+In `styles.css`, look for these color variables and change them:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Primary: `#059669` (emerald green)
+- Secondary: `#71717a` (gray)
+- Background: `#ffffff` (white)
+- Dark background: `#18181b` (dark gray)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Add New Sections
 
-## Deploy on Vercel
+1. Add a new `<section>` in `index.html`
+2. Add corresponding styles in `styles.css`
+3. Update navigation links if needed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Add New Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create separate HTML files and link to them from the navigation instead of using anchor links.
+
+## Why This Approach?
+
+- **No build process** - edit and refresh
+- **No dependencies** - works everywhere
+- **Easy to understand** - standard web technologies
+- **Fast performance** - no JavaScript framework overhead
+- **Easy to deploy** - upload to any web host
+
+## Browser Support
+
+Works in all modern browsers:
+
+- Chrome, Firefox, Safari, Edge
+- Mobile browsers
+- No polyfills needed
+
+---
+
+**Ready to customize?** Just open `index.html` in your browser and start editing!
