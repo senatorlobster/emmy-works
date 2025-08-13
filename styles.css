@@ -152,15 +152,31 @@ body {
 .brand-text {
     font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: -0.025em;
     color: var(--green-primary);
-    text-shadow: 2px 2px 0px var(--green-light);
+    filter: drop-shadow(2px 2px 0px var(--green-light));
+    text-shadow: 1px 1px 0px var(--green-primary);
+}
+
+.brand-link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.brand-link:hover {
+    transform: translateY(-1px);
+    filter: drop-shadow(3px 3px 0px var(--green-light));
 }
 
 @media (prefers-color-scheme: dark) {
     .brand-text {
         color: var(--green-light);
-        text-shadow: 2px 2px 0px var(--green-primary);
+        filter: drop-shadow(2px 2px 0px var(--green-primary));
+        text-shadow: 1px 1px 0px var(--green-light);
+    }
+    
+    .brand-link:hover {
+        filter: drop-shadow(3px 3px 0px var(--green-primary));
     }
 }
 

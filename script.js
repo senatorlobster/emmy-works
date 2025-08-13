@@ -63,7 +63,9 @@ function createFallbackNavigation() {
                         </svg>
                         <div class="logo-glow"></div>
                     </div>
-                    <span class="brand-text">Emmy Yardley</span>
+                    <a href="index.html" class="brand-link">
+                        <span class="brand-text">Emmy Yardley</span>
+                    </a>
                 </div>
                 
                 <div class="nav-links">
