@@ -328,15 +328,31 @@ body {
 .hero-pitch {
     font-size: 1.25rem;
     color: var(--charcoal-lighter);
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.7;
 }
 
+.hero-pitch-secondary {
+    font-size: 1.125rem;
+    color: var(--charcoal-lighter);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-style: italic;
+}
+
 @media (prefers-color-scheme: dark) {
     .hero-pitch {
+        color: var(--charcoal-lighter);
+    }
+    
+    .hero-pitch-secondary {
         color: var(--charcoal-lighter);
     }
 }
