@@ -16,10 +16,10 @@
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
     --text-muted: #6b6b6b;
-    --accent-primary: #2563eb;
-    --accent-secondary: #1e40af;
+    --accent-primary: #03a167;
+    --accent-secondary: rgb(0, 109, 64);
     --border-color: #e5e7eb;
-    --shadow-color: rgba(0, 0, 0, 0.05);
+    --shadow-color: rgba(0, 51, 29, 0.05);
 }
 
 /* Dark mode support */
@@ -291,7 +291,7 @@ main {
 /* Hero section */
 .hero {
     padding: 8rem 0 6rem;
-    text-align: center;
+    text-align: left;
     background: var(--bg-primary);
 }
 
@@ -304,7 +304,7 @@ main {
     font-size: 1.5rem;
     color: var(--text-secondary);
     max-width: 700px;
-    margin: 0 auto 3rem;
+    margin: 0 0 3rem 0;
     line-height: 1.6;
     font-weight: 400;
 }
@@ -313,14 +313,14 @@ main {
     font-size: 1.25rem;
     color: var(--text-muted);
     max-width: 600px;
-    margin: 0 auto 4rem;
+    margin: 0 0 4rem 0;
     line-height: 1.6;
 }
 
 .hero-actions {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
