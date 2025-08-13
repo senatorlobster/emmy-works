@@ -1,5 +1,6 @@
-// Mobile menu functionality
+// Emmy's Portfolio Site - Enhanced JavaScript
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
     
@@ -10,6 +11,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update aria-expanded attribute
         const isExpanded = mobileMenu.classList.contains('active');
         mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        
+        // Animate hamburger to X
+        const hamburgers = this.querySelectorAll('.hamburger');
+        hamburgers.forEach((hamburger, index) => {
+            if (isExpanded) {
+                if (index === 0) hamburger.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                if (index === 1) hamburger.style.opacity = '0';
+                if (index === 2) hamburger.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                hamburger.style.transform = 'none';
+                hamburger.style.opacity = '1';
+            }
+        });
     });
     
     // Close mobile menu when clicking on a link
@@ -18,6 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             mobileMenu.classList.remove('active');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            
+            // Reset hamburger
+            const hamburgers = mobileMenuBtn.querySelectorAll('.hamburger');
+            hamburgers.forEach(hamburger => {
+                hamburger.style.transform = 'none';
+                hamburger.style.opacity = '1';
+            });
         });
     });
     
@@ -26,6 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
             mobileMenu.classList.remove('active');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            
+            // Reset hamburger
+            const hamburgers = mobileMenuBtn.querySelectorAll('.hamburger');
+            hamburgers.forEach(hamburger => {
+                hamburger.style.transform = 'none';
+                hamburger.style.opacity = '1';
+            });
         }
     });
     
@@ -39,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 64; // Account for fixed navbar
+                const offsetTop = targetElement.offsetTop - 72; // Account for fixed navbar
                 
                 window.scrollTo({
                     top: offsetTop,
@@ -77,13 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initial active link update
     updateActiveNavLink();
-});
-
-// Add some nice hover effects and animations
-document.addEventListener('DOMContentLoaded', function() {
-    // Add fade-in animation to sections
-    const sections = document.querySelectorAll('.section');
     
+    // Enhanced scroll animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -94,33 +117,165 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                
+                // Add staggered animation for timeline items
+                if (entry.target.classList.contains('timeline-item')) {
+                    const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 200;
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }, delay);
+                }
             }
         });
     }, observerOptions);
     
+    // Observe sections and timeline items
     sections.forEach(section => {
         section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         sectionObserver.observe(section);
     });
     
-    // Add typing effect to hero title (optional)
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) {
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(-30px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        sectionObserver.observe(item);
+    });
+    
+    // Floating elements animation enhancement
+    const floatingElements = document.querySelectorAll('.floating-gear, .floating-lightbulb, .floating-brain, .floating-tree');
+    floatingElements.forEach((element, index) => {
+        element.style.animationDelay = `${index * 1.5}s`;
+    });
+    
+    // Parallax effect for hero section
+    let ticking = false;
+    
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const heroVisual = document.querySelector('.hero-visual');
+        
+        if (heroVisual) {
+            heroVisual.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
+        
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick);
+    
+    // Typing effect for hero headline (optional enhancement)
+    const heroHeadline = document.querySelector('.hero-headline');
+    if (heroHeadline && window.innerWidth > 768) {
+        const text = heroHeadline.textContent;
+        heroHeadline.textContent = '';
+        heroHeadline.style.borderRight = '2px solid var(--teal-primary)';
         
         let i = 0;
         const typeWriter = () => {
             if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
+                heroHeadline.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter, 50);
+            } else {
+                // Remove cursor after typing is complete
+                setTimeout(() => {
+                    heroHeadline.style.borderRight = 'none';
+                }, 1000);
             }
         };
         
         // Start typing effect after a short delay
-        setTimeout(typeWriter, 500);
+        setTimeout(typeWriter, 1000);
     }
+    
+    // Smooth reveal animation for work cards
+    const workCards = document.querySelectorAll('.work-card');
+    const cardObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    workCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        cardObserver.observe(card);
+    });
+    
+    // Enhanced button hover effects
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.02)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Navbar scroll effect
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+        }
+        
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
+            // Scrolling down
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+    
+    // Dark mode toggle (optional - can be added later)
+    // This would allow users to manually toggle dark mode instead of just following system preference
+    
+    // Performance optimization: Throttle scroll events
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+    
+    // Apply throttling to scroll events
+    window.addEventListener('scroll', throttle(function() {
+        updateActiveNavLink();
+        requestTick();
+    }, 16)); // ~60fps
 });

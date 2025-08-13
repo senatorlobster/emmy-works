@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emmy Works</title>
+    <title>Emmy - Product Leader | Turning Wild Ideas Into Real Products</title>
+    <meta name="description" content="I turn wild ideas into real product and real people into thriving teams. Product leader specializing in clarity, team cohesion, and operationalizing chaos.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="public/lightbulb.svg" alt="Emmy Works" class="logo">
-                <span class="brand-text">Emmy works</span>
+                <div class="logo-container">
+                    <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="logo-glow"></div>
+                </div>
+                <span class="brand-text">Emmy</span>
             </div>
             
             <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#work" class="nav-link">Let's Work Together</a>
                 <a href="#writing" class="nav-link">Writing</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#projects" class="nav-link">Projects</a>
             </div>
             
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -29,64 +38,195 @@
         </div>
         
         <div class="mobile-menu">
-            <a href="#home" class="mobile-nav-link">Home</a>
             <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#work" class="mobile-nav-link">Let's Work Together</a>
             <a href="#writing" class="mobile-nav-link">Writing</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
         </div>
     </nav>
 
     <main>
-        <section id="home" class="hero">
+        <section id="hero" class="hero">
             <div class="hero-content">
-                <img src="public/lightbulb.svg" alt="Emmy Works logo" class="hero-logo">
-                <h1>Emmy Works</h1>
-                <p>Welcome to my portfolio and creative space</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Learn More</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <div class="hero-badge">
+                    <span class="badge-text">Product Leader</span>
+                </div>
+                
+                <h1 class="hero-headline">
+                    I turn wild ideas into real product and real people into thriving teams.
+                </h1>
+                
+                <p class="hero-pitch">
+                    I'm a technically-minded product leader who specializes in creating clarity, fostering team cohesion, and operationalizing chaos. I've been described as brave, savage, thoughtful, and disciplined - someone who listens well, asks sharp questions, and cuts the BS.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#about" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Learn More About Me
+                    </a>
+                    <a href="#work" class="btn btn-secondary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Let's Work Together
+                    </a>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="feature">
+                        <div class="feature-icon">🧠</div>
+                        <span>Clear Communication</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚙️</div>
+                        <span>Operational Excellence</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌱</div>
+                        <span>Team Growth</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-gear gear-1">⚙️</div>
+                    <div class="floating-lightbulb">💡</div>
+                    <div class="floating-brain">🧠</div>
+                    <div class="floating-tree">🌳</div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section">
             <div class="container">
-                <h2>About</h2>
-                <p>This is where you can tell your story, share your background, and explain what you do.</p>
-                <p>Feel free to add more content, images, or any other elements that showcase who you are.</p>
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <p class="section-subtitle">How I became the product leader I am today</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-intro">
+                        <p>I believe clear communication is at the heart of great product work. My journey has been about building - not just products, but also teams and organizations that can execute on ambitious visions.</p>
+                    </div>
+                    
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Company One</h3>
+                                <p class="timeline-role">Senior Product Manager</p>
+                                <p>Led cross-functional teams to deliver complex web and mobile products. Specialized in creating clarity from ambiguous requirements and building processes that scaled.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Company Two</h3>
+                                <p class="timeline-role">Product Director</p>
+                                <p>Built and led product teams from the ground up. Focused on operationalizing chaos and creating systems that enabled teams to thrive and deliver consistently.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Company Three</h3>
+                                <p class="timeline-role">VP of Product</p>
+                                <p>Led product strategy and execution across multiple product lines. Emphasized team cohesion, clear communication, and building products that users genuinely love.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Let's Work Together</h2>
+                    <p class="section-subtitle">What I'm looking for and what I'm not looking for</p>
+                </div>
+                
+                <div class="work-content">
+                    <div class="work-grid">
+                        <div class="work-card work-card-yes">
+                            <div class="card-header">
+                                <div class="card-icon">✅</div>
+                                <h3>What I'm Looking For</h3>
+                            </div>
+                            <ul class="work-list">
+                                <li>Remote work opportunities</li>
+                                <li>Collaborative environments</li>
+                                <li>Good, smart, kind people</li>
+                                <li>Products I genuinely love</li>
+                                <li>Fun, challenging work</li>
+                                <li>Teams that want to grow</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="work-card work-card-no">
+                            <div class="card-header">
+                                <div class="card-icon">❌</div>
+                                <h3>What I'm Not Looking For</h3>
+                            </div>
+                            <ul class="work-list">
+                                <li>Micromanagement</li>
+                                <li>Toxic work cultures</li>
+                                <li>Products I can't get excited about</li>
+                                <li>Lack of clear communication</li>
+                                <li>Teams resistant to change</li>
+                                <li>Work that doesn't challenge me</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="work-cta">
+                        <p>Ready to build something amazing together?</p>
+                        <a href="mailto:emmy@yardley.ca" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="writing" class="section">
             <div class="container">
-                <h2>Writing</h2>
-                <p>Share your thoughts, articles, or creative writing here.</p>
-                <div class="writing-grid">
-                    <article class="writing-card">
-                        <h3>Sample Article</h3>
-                        <p>This is a placeholder for your writing content. Replace with your actual articles or blog posts.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </article>
+                <div class="section-header">
+                    <h2>Writing</h2>
+                    <p class="section-subtitle">Lessons learned and ways I like to work</p>
+                </div>
+                
+                <div class="writing-content">
+                    <div class="writing-placeholder">
+                        <div class="placeholder-icon">✍️</div>
+                        <h3>Coming Soon</h3>
+                        <p>I'm working on articles about product leadership, team building, and the lessons I've learned along the way. Check back soon for insights on creating clarity, fostering team cohesion, and operationalizing chaos.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
+        <section id="projects" class="section section-alt">
             <div class="container">
-                <h2>Contact</h2>
-                <p>Get in touch! Here are some ways to reach me:</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label">Email:</span>
-                        <a href="mailto:your.email@example.com">your.email@example.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">LinkedIn:</span>
-                        <a href="#" target="_blank">linkedin.com/in/yourprofile</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">GitHub:</span>
-                        <a href="#" target="_blank">github.com/yourusername</a>
+                <div class="section-header">
+                    <h2>Projects</h2>
+                    <p class="section-subtitle">Examples of past work and achievements</p>
+                </div>
+                
+                <div class="projects-content">
+                    <div class="projects-placeholder">
+                        <div class="placeholder-icon">🚀</div>
+                        <h3>Portfolio in Progress</h3>
+                        <p>I'm curating examples of my best work - from product launches to team transformations. This section will showcase how I turn wild ideas into real products and real people into thriving teams.</p>
                     </div>
                 </div>
             </div>
@@ -95,7 +235,26 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Emmy Works. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-container">
+                        <svg class="logo logo-small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span>Emmy</span>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="mailto:emmy@yardley.ca">emmy@yardley.ca</a>
+                    <span class="separator">•</span>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Emmy. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
