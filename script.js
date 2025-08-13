@@ -146,35 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(item);
     });
     
-    // Floating elements animation enhancement
-    const floatingElements = document.querySelectorAll('.floating-gear, .floating-lightbulb, .floating-brain, .floating-tree');
-    floatingElements.forEach((element, index) => {
-        element.style.animationDelay = `${index * 1.5}s`;
-    });
-    
-    // Parallax effect for hero section
-    let ticking = false;
-    
-    function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const heroVisual = document.querySelector('.hero-visual');
-        
-        if (heroVisual) {
-            heroVisual.style.transform = `translateY(${scrolled * 0.1}px)`;
-        }
-        
-        ticking = false;
-    }
-    
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    }
-    
-    window.addEventListener('scroll', requestTick);
-    
     // Typing effect for hero headline (optional enhancement)
     const heroHeadline = document.querySelector('.hero-headline');
     if (heroHeadline && window.innerWidth > 768) {
@@ -276,6 +247,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply throttling to scroll events
     window.addEventListener('scroll', throttle(function() {
         updateActiveNavLink();
-        requestTick();
     }, 16)); // ~60fps
 });
