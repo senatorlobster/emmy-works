@@ -161,15 +161,16 @@ body {
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
+    display: block; /* Make the link cover the entire brand area */
 }
 
 .brand-link:hover {
-    transform: translateY(-1px);
+    transform: none; /* Remove individual text hover transform since it's handled by nav-brand:hover */
 }
 
-/* Make the entire nav-brand area trigger the glow effect */
+/* Make the entire nav-brand area trigger both animations */
 .nav-brand:hover .logo-glow {
-    opacity: 1;
+    opacity: 0; /* Keep the glow element but make it invisible */
 }
 
 .nav-brand:hover .brand-text {
