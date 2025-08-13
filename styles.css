@@ -309,10 +309,18 @@ body {
     background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-    .hero {
-        background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 100%);
-    }
+.hero-career {
+    min-height: 60vh;
+    text-align: center;
+}
+
+.hero-career .hero-content {
+    max-width: 900px;
+}
+
+.hero-career .hero-pitch {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-content {
@@ -388,6 +396,134 @@ body {
     margin-bottom: 48px;
 }
 
+.hero-features {
+    display: flex;
+    gap: 32px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--charcoal-lighter);
+    font-weight: 500;
+    padding: 8px 16px;
+    background-color: rgba(127, 176, 105, 0.1);
+    border-radius: 12px;
+    border: 2px solid var(--green-light);
+}
+
+.feature-icon {
+    font-size: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero {
+        background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 100%);
+    }
+}
+
+/* Learning cards */
+.learnings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.learning-card {
+    background-color: var(--white);
+    padding: 32px;
+    border-radius: 16px;
+    border: 3px solid var(--green-primary);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    text-align: center;
+}
+
+.learning-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px var(--shadow-color);
+    border-color: var(--green-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    .learning-card {
+        background-color: var(--gray-800);
+        border-color: var(--green-light);
+    }
+    
+    .learning-card:hover {
+        box-shadow: 0 20px 40px var(--shadow-color);
+        border-color: var(--green-bright);
+    }
+}
+
+.learning-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.learning-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 0px var(--green-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    .learning-card h3 {
+        color: var(--green-light);
+        text-shadow: 1px 1px 0px var(--green-primary);
+    }
+}
+
+.learning-card p {
+    color: var(--charcoal-lighter);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .learning-card p {
+        color: var(--charcoal-lighter);
+    }
+}
+
+/* Next chapter section */
+.next-chapter {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.next-chapter p {
+    font-size: 1.25rem;
+    color: var(--charcoal-lighter);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .next-chapter p {
+        color: var(--charcoal-lighter);
+    }
+}
+
+.next-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Buttons with retro styling */
 .btn {
     display: inline-flex;
@@ -461,29 +597,6 @@ body {
         background-color: var(--green-light);
         color: var(--charcoal);
     }
-}
-
-.hero-features {
-    display: flex;
-    gap: 32px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--charcoal-lighter);
-    font-weight: 500;
-    padding: 8px 16px;
-    background-color: rgba(127, 176, 105, 0.1);
-    border-radius: 12px;
-    border: 2px solid var(--green-light);
-}
-
-.feature-icon {
-    font-size: 1.25rem;
 }
 
 /* Hero visual elements */
@@ -578,6 +691,81 @@ body {
 
 @media (prefers-color-scheme: dark) {
     .about-intro p {
+        color: var(--charcoal-lighter);
+    }
+}
+
+.career-teaser {
+    text-align: center;
+    padding: 48px;
+    background-color: var(--white);
+    border-radius: 16px;
+    border: 3px solid var(--green-primary);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.career-teaser h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 0px var(--green-light);
+}
+
+.career-teaser p {
+    font-size: 1.125rem;
+    color: var(--charcoal-lighter);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.career-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background-color: rgba(127, 176, 105, 0.1);
+    border-radius: 12px;
+    border: 2px solid var(--green-light);
+    color: var(--charcoal-lighter);
+    font-weight: 500;
+}
+
+.highlight-icon {
+    font-size: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .career-teaser {
+        background-color: var(--gray-800);
+        border-color: var(--green-light);
+    }
+    
+    .career-teaser h3 {
+        color: var(--green-light);
+        text-shadow: 1px 1px 0px var(--green-primary);
+    }
+    
+    .career-teaser p {
+        color: var(--charcoal-lighter);
+    }
+    
+    .highlight-item {
+        background-color: rgba(127, 176, 105, 0.2);
+        border-color: var(--green-accent);
         color: var(--charcoal-lighter);
     }
 }
@@ -1212,5 +1400,32 @@ body {
         left: 6px;
         width: 16px;
         height: 16px;
+    }
+}
+
+/* Active navigation state */
+.nav-link.active {
+    color: var(--green-primary);
+    background-color: rgba(127, 176, 105, 0.1);
+    box-shadow: inset 0 0 0 2px var(--green-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+    .nav-link.active {
+        color: var(--green-light);
+        background-color: rgba(127, 176, 105, 0.2);
+        box-shadow: inset 0 0 0 2px var(--green-light);
+    }
+}
+
+.mobile-nav-link.active {
+    background-color: rgba(127, 176, 105, 0.1);
+    color: var(--green-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+    .mobile-nav-link.active {
+        background-color: rgba(127, 176, 105, 0.2);
+        color: var(--green-light);
     }
 }
