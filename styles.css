@@ -131,16 +131,12 @@ body {
 
 .logo-glow {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, var(--green-bright) 0%, transparent 70%);
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(127, 176, 105, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
     opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
+    transition: opacity 0.3s ease;
 }
 
 .logo-container:hover .logo-glow {
@@ -174,7 +170,6 @@ body {
 /* Make the entire nav-brand area trigger the glow effect */
 .nav-brand:hover .logo-glow {
     opacity: 1;
-    transform: scale(1.2);
 }
 
 .nav-brand:hover .brand-text {
