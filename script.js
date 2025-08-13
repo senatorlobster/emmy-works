@@ -1,7 +1,9 @@
 // Emmy's Portfolio Site - Enhanced JavaScript
 // Global navigation component loader
 function loadNavigation() {
-    fetch('nav.html')
+    // Add cache-busting timestamp to ensure fresh navigation
+    const timestamp = new Date().getTime();
+    fetch(`nav.html?t=${timestamp}`)
         .then(response => response.text())
         .then(html => {
             // Insert navigation at the beginning of the body
