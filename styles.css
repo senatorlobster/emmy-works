@@ -329,6 +329,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 2rem;
 }
 
 .profile-photo {
@@ -358,7 +359,7 @@ main {
     font-size: 1.4rem;
     color: var(--text-secondary);
     max-width: 100%;
-    margin: 0 0 3.5rem 0;
+    margin: 0;
     line-height: 1.6;
     font-weight: 400;
 }
