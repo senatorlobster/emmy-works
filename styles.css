@@ -700,10 +700,14 @@ footer {
     .hero-image {
         flex: 0 0 auto;
         order: -1;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
     
     .profile-photo {
-        max-width: 280px;
+        max-width: 80%;
+        width: 80%;
     }
     
     .hero-pitch {
