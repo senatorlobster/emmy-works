@@ -432,7 +432,7 @@ section:last-child {
 .section-title p {
     color: var(--text-secondary);
     font-size: 1.75rem;
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 0 2rem 0;
     line-height: 1.5;
     font-weight: 500;
@@ -614,6 +614,7 @@ section:last-child {
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 2rem;
+    font-size: 1.4rem;
 }
 
 .work-cta ul {
@@ -624,6 +625,7 @@ section:last-child {
     margin-bottom: 1rem;
     color: var(--text-secondary);
     line-height: 1.6;
+    font-size: 1.4rem;
 }
 
 .work-ps {
