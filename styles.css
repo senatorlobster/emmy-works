@@ -245,7 +245,6 @@ p {
 }
 
 .mobile-menu {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -253,10 +252,16 @@ p {
     background: var(--bg-primary);
     border-top: 1px solid var(--border-color);
     padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
 }
 
 .mobile-menu.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .mobile-nav-link {
