@@ -622,7 +622,7 @@ section:last-child {
 }
 
 .work-cta li {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 1.4rem;
