@@ -679,7 +679,8 @@ footer {
     
     .hero-heading {
         margin-bottom: 3rem;
-        padding-left: 1rem;
+        padding-left: 10%;
+        padding-right: 10%;
     }
     
     .hero-heading h1 {
@@ -689,7 +690,7 @@ footer {
     .hero-content {
         flex-direction: column;
         gap: 3rem;
-        padding: 0 1rem;
+        padding: 0 10%;
     }
     
     .hero-text {
