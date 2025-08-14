@@ -587,6 +587,7 @@ section:last-child {
 /* Work section */
 #work {
     background: var(--bg-secondary);
+    padding-bottom: 4.5rem;
 }
 
 #work .container {
