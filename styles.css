@@ -581,6 +581,10 @@ section:last-child {
 }
 
 /* Work section */
+#work {
+    background: var(--bg-secondary);
+}
+
 .work-cta {
     text-align: left;
     max-width: 700px;
