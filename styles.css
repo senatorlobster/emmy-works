@@ -679,8 +679,10 @@ footer {
     
     .hero-heading {
         margin-bottom: 3rem;
-        padding-left: 10%;
-        padding-right: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
     
     .hero-heading h1 {
