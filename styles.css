@@ -590,6 +590,12 @@ section:last-child {
     background: var(--bg-secondary);
 }
 
+#work .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 .work-cta {
     text-align: left;
     max-width: 600px;
