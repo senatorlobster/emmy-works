@@ -417,7 +417,7 @@ section:last-child {
 
 .section-title {
     text-align: left;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 .section-title h2 {
@@ -587,7 +587,7 @@ section:last-child {
 /* Work section */
 #work {
     background: var(--bg-secondary);
-    padding-bottom: 4.5rem;
+    padding-bottom: 3rem;
 }
 
 #work .container {
@@ -684,6 +684,7 @@ footer {
     
     .hero-heading {
         margin-bottom: 3rem;
+        padding: 0 10%;
     }
     
     .hero-heading h1 {
