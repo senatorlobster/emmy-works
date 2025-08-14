@@ -657,6 +657,7 @@ section:last-child {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background: var(--bg-primary);
+    cursor: default;
 }
 
 .contact-method:hover {
@@ -664,6 +665,16 @@ section:last-child {
     transform: translateY(-2px);
     border-color: var(--accent-primary);
     box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Make sure links still look clickable */
+a.contact-method {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.contact-method:hover {
+    cursor: pointer;
 }
 
 /* Lists */
