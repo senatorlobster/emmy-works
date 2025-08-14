@@ -298,6 +298,7 @@ main {
     text-align: left;
     margin-bottom: 4rem;
     padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .hero-heading h1 {
@@ -681,8 +682,6 @@ footer {
         margin-bottom: 3rem;
         margin-left: 10%;
         margin-right: 10%;
-        padding-left: 2rem;
-        padding-right: 2rem;
     }
     
     .hero-heading h1 {
