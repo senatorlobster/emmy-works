@@ -630,7 +630,8 @@ section:last-child {
 .work-ps {
     color: var(--text-muted);
     font-style: italic;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 1.125rem;
 }
 
