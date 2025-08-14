@@ -679,6 +679,7 @@ footer {
     
     .hero-heading {
         margin-bottom: 3rem;
+        padding-left: 1rem;
     }
     
     .hero-heading h1 {
@@ -688,11 +689,12 @@ footer {
     .hero-content {
         flex-direction: column;
         gap: 3rem;
-        text-align: center;
+        padding: 0 1rem;
     }
     
     .hero-text {
         max-width: 100%;
+        text-align: left;
     }
     
     .hero-image {
@@ -713,7 +715,7 @@ footer {
     }
     
     .hero-actions {
-        justify-content: center;
+        justify-content: flex-start;
     }
     
     .timeline::before {
