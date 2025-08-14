@@ -297,6 +297,7 @@ main {
 .hero-heading {
     text-align: left;
     margin-bottom: 4rem;
+    padding-left: 2rem;
 }
 
 .hero-heading h1 {
