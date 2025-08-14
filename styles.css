@@ -630,9 +630,7 @@ section:last-child {
 .work-ps {
     color: var(--text-muted);
     font-style: italic;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
     font-size: 1.125rem;
 }
 
@@ -643,6 +641,7 @@ section:last-child {
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 1.4rem;
+    padding-left: 2rem;
 }
 
 /* Lists */
