@@ -297,10 +297,10 @@ main {
 .hero-heading {
     text-align: left;
     margin-bottom: 4rem;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
 }
 
 .hero-heading h1 {
