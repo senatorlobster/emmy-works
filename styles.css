@@ -613,7 +613,6 @@ section:last-child {
 .work-cta p {
     color: var(--text-secondary);
     line-height: 1.6;
-    margin-bottom: 2rem;
     font-size: 1.4rem;
 }
 
