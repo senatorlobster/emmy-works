@@ -255,7 +255,7 @@ p {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 }
 
 .mobile-menu.active {
