@@ -636,45 +636,13 @@ section:last-child {
     font-size: 1.125rem;
 }
 
-/* Contact methods */
-.contact-methods {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-}
-
-.contact-method {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+/* Contact email */
+.contact-email {
     color: var(--accent-primary);
-    text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 1rem 1.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: var(--bg-primary);
-    cursor: default;
-}
-
-.contact-method:hover {
-    color: var(--accent-secondary);
-    transform: translateY(-2px);
-    border-color: var(--accent-primary);
-    box-shadow: 0 4px 12px var(--shadow-color);
-}
-
-/* Make sure links still look clickable */
-a.contact-method {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-a.contact-method:hover {
-    cursor: pointer;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
 }
 
 /* Lists */
