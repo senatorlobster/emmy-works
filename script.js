@@ -81,7 +81,7 @@ function createFallbackNavigation() {
                 <div class="nav-links">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="career.html" class="nav-link">Career</a>
-                    <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+                    <a href="testimonials.html" class="nav-link">Testimonials</a>
                     <a href="index.html#work" class="nav-link">Let's Work Together</a>
                 </div>
                 
