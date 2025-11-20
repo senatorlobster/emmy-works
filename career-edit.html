@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Career · Emmy</title>
+  <meta name="description" content="Emmy Yardley — Career highlights, superpowers, and proof points." />
+  <style>
+    /* Base + palette (forest / sage), light <-> dark auto */
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #5c6b5f;            /* desaturated green-gray for body */
+      --accent: #0f3d2e;           /* forest */
+      --accent-2: #cfe3d7;         /* light sage */
+      --card: #f8faf9;
+      --card-border: #e7efe9;
+      --link: #124c39;             /* forest slightly brighter */
+      --shadow: 0 10px 20px rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0f0d;
+        --text: #f3f5f3;
+        --muted: #a6b3aa;
+        --accent: #b7e1c9;
+        --accent-2: #163127;
+        --card: #101513;
+        --card-border: #1a2a23;
+        --link: #b7e1c9;
+        --shadow: 0 10px 20px rgba(0,0,0,.35);
+      }
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+
+    /* Header / Hero */
+    header {
+      padding: clamp(2.5rem, 6vw, 5rem) 0 1rem;
+      border-bottom: 1px solid var(--card-border);
+      top: 0;
+      background: color-mix(in lch, var(--bg) 90%, transparent);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+    .brand { font-size: 0.95rem; letter-spacing: .02em; color: var(--muted); }
+    .brand a { color: var(--muted); text-decoration: none; }
+    .hero {
+      padding: clamp(2rem, 5vw, 3rem) 0 clamp(1rem, 3vw, 2rem);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4.6vw, 3.2rem);
+      line-height: 1.15;
+      margin: 0 0 .6rem 0;
+      color: var(--accent);
+    }
+    .hero p {
+      margin: 0 0 1rem 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      max-width: 75ch;
+    }
+
+    /* Superpower badges */
+    .badges {
+      display: flex; flex-wrap: wrap; gap: .75rem;
+      margin-top: 1rem;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      padding: .55rem .8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .95rem;
+      text-decoration: none;
+      color: var(--link);
+      box-shadow: var(--shadow);
+    }
+    .badge span {
+      display: inline-block;
+      width: .5rem; height: .5rem;
+      border-radius: 999px; background: var(--accent);
+    }
+
+    /* Sections */
+    section { padding: clamp(2rem, 5vw, 3rem) 0; }
+    section h2 {
+      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+      margin: 0 0 1.2rem 0;
+      color: var(--accent);
+    }
+    .subtle { color: var(--muted); }
+
+    /* Superpowers grid */
+    .powers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .power {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.25rem 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .power h3 {
+      margin: 0 0 .5rem 0;
+      font-size: 1.15rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .power h3 .dot { width: .6rem; height: .6rem; border-radius: 999px; background: var(--accent); display:inline-block; }
+    .power > p { margin: 0 0 .75rem 0; color: var(--muted); }
+    .proof {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .proof li {
+      padding-left: 1.1rem; position: relative; margin: .5rem 0;
+    }
+    .proof li::before {
+      content: "–"; position: absolute; left: 0; color: var(--accent);
+    }
+    .tag {
+      display: inline-block; font-size: .8rem; padding: .2rem .5rem; border: 1px solid var(--card-border);
+      background: var(--bg); border-radius: 6px; margin-left: .35rem; color: var(--muted);
+    }
+
+    /* Stats / Highlights */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .stat {
+      border-radius: 14px; padding: 1.2rem 1.2rem;
+      background: linear-gradient(0deg, var(--card), var(--card));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+    .stat .big { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1.1; }
+    .stat p { margin: .35rem 0 0; color: var(--muted); }
+
+    /* Roles (compact, reverse-chronological) */
+    .roles { border-top: 1px solid var(--card-border); margin-top: .5rem; padding-top: 1.5rem; }
+    .role {
+      display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem;
+      padding: .9rem 0; border-bottom: 1px dashed var(--card-border);
+    }
+    .role:last-child { border-bottom: none; }
+    .role h3 { margin: 0; font-size: 1rem; }
+    .role .where { color: var(--muted); }
+    .role time { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    /* Footer CTA */
+    footer {
+      padding: 2.5rem 0 3.5rem;
+      border-top: 1px solid var(--card-border);
+      color: var(--muted);
+    }
+    a { color: var(--link); }
+    .sr { position: absolute; left: -9999px; }
+
+    /* Smooth anchor scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand"><a href="/">← emmy.works</a></div>
+      <div class="hero">
+        <h1>I build teams that ship — and win.</h1>
+        <p>
+          I’m a product & operations leader who creates the conditions for great work:
+          clarify vision, remove friction, build momentum. My sweet spot is
+          <strong>team & culture</strong>, <strong>efficient product development</strong>, and
+          <strong>revenue creation</strong>.
+        </p>
+        <div class="badges" aria-label="Superpowers">
+          <a class="badge" href="#team-culture"><span></span> Team & Culture</a>
+          <a class="badge" href="#product-dev"><span></span> Efficient Product Dev</a>
+          <a class="badge" href="#revenue"><span></span> Revenue Creation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Superpowers -->
+    <section aria-labelledby="supers-title">
+      <h2 id="supers-title">Superpowers, with proof</h2>
+      <div class="powers-grid">
+        <article class="power" id="team-culture">
+          <h3><span class="dot" aria-hidden="true"></span> Team & Culture Building</h3>
+          <p>Healthy teams ship better. I design operating rhythms, coaching, and feedback loops that keep people aligned and energized.</p>
+          <ul class="proof">
+            <li>Built a cross-functional product org from 5 → 35 while keeping attrition < 10% <span class="tag">scale</span></li>
+            <li>Introduced lightweight planning & retros that lifted engagement scores by 30% <span class="tag">ops</span></li>
+            <li>Mentored ICs into lead/manager roles; created a repeatable pipeline <span class="tag">talent</span></li>
+          </ul>
+        </article>
+
+        <article class="power" id="product-dev">
+          <h3><span class="dot" aria-hidden="true"></span> Efficient & Effective Product Development</h3>
+          <p>Clear bets, crisp scoping, and honest feedback cycles. Ship value early, often, and with quality.</p>
+          <ul class="proof">
+            <li>Cut concept-to-launch cycle time 6 wks → 3 wks via lean discovery & WIP limits <span class="tag">throughput</span></li>
+            <li>Delivered cross-platform redesign in 6 months with 25% fewer resources <span class="tag">execution</span></li>
+            <li>Launched marketplace MVP in 10 weeks; validated monetization ahead of plan <span class="tag">MVP</span></li>
+          </ul>
+        </article>
+
+        <article class="power" id="revenue">
+          <h3><span class="dot" aria-hidden="true"></span> Revenue Creation</h3>
+          <p>Product-led growth paired with smart packaging, pricing, and partnerships.</p>
+          <ul class="proof">
+            <li>Drove $15M+ ARR via new tiering, onboarding, and activation loops <span class="tag">PLG</span></li>
+            <li>Improved retention 20% with value-based bundles & partner integrations <span class="tag">retention</span></li>
+            <li>Converted 12% of free users to paid with a premium plan that actually mattered <span class="tag">pricing</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="flywheel-title" style="margin: 2rem 0;">
+        <h2 id="flywheel-title" style="position: absolute; left: -9999px;">Superpowers Flywheel</h2>
+      
+        <style>
+          /* Palette sync (light/dark) */
+          :root {
+            --bg: #ffffff;
+            --text: #222222;
+            --muted: #5c6b5f;
+            --accent: #0f3d2e;     /* forest */
+            --accent-2: #cfe3d7;   /* sage */
+            --arc: #6ea88e;        /* mid-sage for motion */
+            --node: #f8faf9;
+            --node-stroke: #e7efe9;
+          }
+          @media (prefers-color-scheme: dark) {
+            :root {
+              --bg: #0c0f0d;
+              --text: #f3f5f3;
+              --muted: #a6b3aa;
+              --accent: #b7e1c9;
+              --accent-2: #163127;
+              --arc: #7fc9a9;
+              --node: #101513;
+              --node-stroke: #1a2a23;
+            }
+          }
+          .flywheel {
+            display: block;
+            width: min(900px, 100%);
+            height: auto;
+            margin-inline: auto;
+          }
+          .flywheel .arc {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 14 14;
+            animation: flow 6s linear infinite;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .flywheel .arc { animation: none; }
+          }
+          @keyframes flow { to { stroke-dashoffset: -56; } }
+      
+          .flywheel .node {
+            fill: var(--node);
+            stroke: var(--node-stroke);
+            stroke-width: 2;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,.08));
+            transition: transform .25s ease, stroke .25s ease;
+            transform-box: fill-box;
+            transform-origin: center;
+          }
+          .flywheel .node:hover { transform: scale(1.045); stroke: var(--accent); }
+      
+          .flywheel .label {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            fill: var(--text);
+            font-weight: 700;
+            text-anchor: middle;
+            dominant-baseline: middle;
+          }
+          .flywheel .sublabel {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            fill: var(--muted);
+            font-size: 12px;
+            text-anchor: middle;
+          }
+          .flywheel .callout {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            fill: var(--muted);
+            font-size: 12px;
+          }
+          .flywheel .callout tspan { x: inherit; dy: 1.15em; }
+          .flywheel .icon { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+          .flywheel .icon-fill { fill: var(--accent); stroke: none; }
+          .flywheel .center {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            fill: var(--accent);
+            font-weight: 800;
+            text-anchor: middle;
+          }
+        </style>
+      
+        <!-- Responsive viewBox: 600x600 coordinate space -->
+        <svg class="flywheel" viewBox="0 0 600 600" role="img" aria-label="Team & Culture → Product Development → Revenue → back to Team & Culture">
+          <!-- Arrowhead marker -->
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--arc)"></path>
+            </marker>
+          </defs>
+      
+          <!-- Circular arcs showing flow (clockwise) -->
+          <!-- Top -> Bottom-right -->
+          <path class="arc" d="M300,90 A210,210 0 0 1 482,405" marker-end="url(#arrow)"></path>
+          <!-- Bottom-right -> Bottom-left -->
+          <path class="arc" d="M482,405 A210,210 0 0 1 118,405" marker-end="url(#arrow)"></path>
+          <!-- Bottom-left -> Top -->
+          <path class="arc" d="M118,405 A210,210 0 0 1 300,90" marker-end="url(#arrow)"></path>
+      
+          <!-- Center title -->
+          <text x="300" y="290" class="center" style="font-size:18px; letter-spacing:.06em;">COMPOUNDING</text>
+          <text x="300" y="312" class="center" style="font-size:28px;">Momentum</text>
+      
+          <!-- === Node: Team & Culture (Top) === -->
+          <g transform="translate(300,90)">
+            <title>Team & Culture → enables great product work</title>
+            <circle r="62" class="node"></circle>
+            <!-- Icon: three people dots -->
+            <circle cx="-18" cy="-6" r="6" class="icon-fill"></circle>
+            <circle cx="0" cy="-10" r="6" class="icon-fill"></circle>
+            <circle cx="18" cy="-6" r="6" class="icon-fill"></circle>
+            <path class="icon" d="M -30 14 q 12 -12 24 0 M -6 14 q 6 -8 12 0 M 6 14 q 6 -8 12 0"></path>
+      
+            <text class="label" x="0" y="22" style="font-size:13px;">Team &amp; Culture</text>
+            <text class="sublabel" x="0" y="38">trust, clarity, cadence</text>
+          </g>
+      
+          <!-- Callout for Team & Culture -->
+          <text x="300" y="22" class="callout">
+            <tspan>• Scaled cross-functional org, kept attrition &lt; 10%</tspan>
+            <tspan>• Coaching pipeline for emerging leaders</tspan>
+          </text>
+      
+          <!-- === Node: Efficient Product Dev (Bottom-right) === -->
+          <g transform="translate(482,405)">
+            <title>Efficient Product Dev → ships value faster</title>
+            <circle r="62" class="node"></circle>
+            <!-- Icon: simplified gear -->
+            <circle cx="0" cy="0" r="16" class="icon"></circle>
+            <rect x="-1.5" y="-28" width="3" height="10" class="icon" rx="1.5"></rect>
+            <rect x="-1.5" y="18" width="3" height="10" class="icon" rx="1.5"></rect>
+            <rect x="-28" y="-1.5" width="10" height="3" class="icon" rx="1.5"></rect>
+            <rect x="18" y="-1.5" width="10" height="3" class="icon" rx="1.5"></rect>
+            <rect x="-20" y="-20" width="8" height="3" transform="rotate(-45 -16 -18)" class="icon" rx="1.5"></rect>
+            <rect x="12" y="15" width="8" height="3" transform="rotate(-45 16 16)" class="icon" rx="1.5"></rect>
+            <rect x="12" y="-20" width="8" height="3" transform="rotate(45 16 -18)" class="icon" rx="1.5"></rect>
+            <rect x="-20" y="15" width="8" height="3" transform="rotate(45 -16 16)" class="icon" rx="1.5"></rect>
+      
+            <text class="label" x="0" y="26" style="font-size:13px;">Efficient Product Dev</text>
+            <text class="sublabel" x="0" y="42">focus, scope, feedback</text>
+          </g>
+      
+          <!-- Callout for Product Dev -->
+          <text x="528" y="475" class="callout">
+            <tspan>• 6→3 wk cycle time via WIP limits</tspan>
+            <tspan>• 10-week MVP validated monetization</tspan>
+          </text>
+      
+          <!-- === Node: Revenue Creation (Bottom-left) === -->
+          <g transform="translate(118,405)">
+            <title>Revenue Creation → funds team & culture</title>
+            <circle r="62" class="node"></circle>
+            <!-- Icon: up/right arrow -->
+            <path class="icon" d="M -18 18 L -18 -6 L 6 -6"></path>
+            <path class="icon" d="M 6 -6 L -3 -14 M 6 -6 L 14 -14"></path>
+      
+            <text class="label" x="0" y="26" style="font-size:13px;">Revenue Creation</text>
+            <text class="sublabel" x="0" y="42">PLG, pricing, retention</text>
+          </g>
+      
+          <!-- Callout for Revenue -->
+          <text x="32" y="475" class="callout">
+            <tspan>• $15M+ ARR via tiering + activation</tspan>
+            <tspan>• +20% retention with value bundles</tspan>
+          </text>
+        </svg>
+      </section>
+      
+
+    <!-- Career highlights / Stats -->
+    <section aria-labelledby="highlights-title">
+      <h2 id="highlights-title">Career highlights</h2>
+      <p class="subtle">A quick read for busy humans — deeper stories available on request.</p>
+      <div class="stats-grid" role="list">
+        <div class="stat" role="listitem">
+          <div class="big">20+</div>
+          <p>years leading product & tech teams</p>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="big">15+</div>
+          <p>major launches (consumer & B2B)</p>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="big">$50M+</div>
+          <p>direct/attributed revenue impact</p>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="big">12</div>
+          <p>leaders coached into new roles</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected roles (compact, recent-first) -->
+    <section class="roles" aria-labelledby="roles-title">
+      <h2 id="roles-title">Selected roles</h2>
+      <div class="role">
+        <div>
+          <h3>Head of Product</h3>
+          <div class="where">Company / Product area</div>
+        </div>
+        <time datetime="2022-01">2022–Present</time>
+      </div>
+      <div class="role">
+        <div>
+          <h3>Director, Product & Operations</h3>
+          <div class="where">Company / Platform</div>
+        </div>
+        <time datetime="2018-01">2018–2022</time>
+      </div>
+      <div class="role">
+        <div>
+          <h3>Product Lead</h3>
+          <div class="where">Company / Domain</div>
+        </div>
+        <time datetime="2014-01">2014–2018</time>
+      </div>
+      <div class="role">
+        <div>
+          <h3>Earlier experience</h3>
+          <div class="where">Early career in product/engineering leadership</div>
+        </div>
+        <time aria-label="early career">pre-2014</time>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Prefer the résumé view? <a href="/Emmy-Yardley-Resume.pdf">Download PDF</a> · Or connect on <a href="https://www.linkedin.com/">LinkedIn</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
