@@ -532,6 +532,13 @@ section:last-child {
     margin-bottom: 1.5rem;
 }
 
+.timeline-tagline {
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0.25rem 0 0.75rem;
+    line-height: 1.5;
+}
+
 .timeline-description {
     color: var(--text-secondary);
     line-height: 1.7;
@@ -937,7 +944,7 @@ footer {
 
 .strength-card {
     background: var(--bg-primary);
-    border: 1px solid #E2E8F0;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 28px;
     box-shadow: 0 1px 3px var(--shadow-color);
@@ -948,7 +955,7 @@ footer {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 1px solid #E2E8F0;
+    border: 1px solid var(--border-color);
     background: var(--bg-primary);
     margin-bottom: 12px;
 }
@@ -959,7 +966,7 @@ footer {
 
 .strength-card .card-sep {
     height: 1px;
-    background: #E2E8F0;
+    background: var(--border-color);
     margin: 10px 0 14px;
 }
 
@@ -1033,7 +1040,7 @@ footer {
 
 /* Centered modern timeline variant tweaks */
 .timeline.centered::before {
-    background: #D1D5DB;
+    background: var(--border-color);
 }
 
 .timeline.centered .timeline-item {
@@ -1045,7 +1052,7 @@ footer {
     height: 8px;
     border-width: 3px;
     top: 1.5rem;
-    box-shadow: 0 0 0 1px #D1D5DB;
+    box-shadow: 0 0 0 1px var(--border-color);
 }
 
 .timeline.centered .timeline-date {
